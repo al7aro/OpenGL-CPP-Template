@@ -5,3 +5,9 @@
 [submodule "ProjectName/vendor/glm"]
 	path = ProjectName/vendor/glm
 	url = https://github.com/g-truc/glm.git
+[submodule "ProjectName/vendor/imgui"]
+	path = ProjectName/vendor/imgui
+	url = https://github.com/dVaGaymer/imgui.git
+[submodule "ProjectName/vendor/glad"]
+	path = ProjectName/vendor/glad
+	url = https://github.com/dVaGaymer/glad.git
