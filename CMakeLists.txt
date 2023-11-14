@@ -43,7 +43,12 @@ file(GLOB_RECURSE source_files
 
 set(SOURCES ${source_files})
 
-add_executable(${PROJECT_NAME} ${SOURCES} )
+# Executable
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# Set the output directory for the executable
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Libraries
 target_link_libraries(${PROJECT_NAME} glfw)
