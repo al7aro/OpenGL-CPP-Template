@@ -27,8 +27,8 @@ set(IMGUI_DIR ${VENDOR_DIR}/imgui)
 add_subdirectory(${IMGUI_DIR})
 
 # GLAD
-set(IMGUI_DIR ${VENDOR_DIR}/glad)
-add_subdirectory(${IMGUI_DIR})
+set(GLAD_DIR ${VENDOR_DIR}/glad)
+add_subdirectory(${GLAD_DIR})
 
 # OpenGL
 find_package(OpenGL REQUIRED)
@@ -37,11 +37,13 @@ find_package(OpenGL REQUIRED)
 file(GLOB_RECURSE source_files
     "${PROJECT_DIR}/src/*.cpp"
     "${PROJECT_DIR}/include/*.hpp"
+	
+	"${IMGUI_DIR}/*.h"
 )
 
 set(SOURCES ${source_files})
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} )
 
 # Libraries
 target_link_libraries(${PROJECT_NAME} glfw)
@@ -51,10 +53,11 @@ target_link_libraries(${PROJECT_NAME} imgui)
 target_link_libraries(${PROJECT_NAME} OpenGL::GL)
 
 # Headers
-#target_include_directories(${PROJECT_NAME} PUBLIC "${IMGUI_DIR}")
-#target_include_directories(${PROJECT_NAME} PUBLIC "${GLM_DIR}")
-#target_include_directories(${PROJECT_NAME} PUBLIC "${GLFW_DIR}/include")
-#target_include_directories(${PROJECT_NAME} PUBLIC "${GLAD_DIR}/include")
+target_include_directories(${PROJECT_NAME} PUBLIC "${IMGUI_DIR}")
+
+target_include_directories(${PROJECT_NAME} PUBLIC "${GLM_DIR}")
+target_include_directories(${PROJECT_NAME} PUBLIC "${GLFW_DIR}/include")
+target_include_directories(${PROJECT_NAME} PUBLIC "${GLAD_DIR}/include")
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
