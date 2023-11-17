@@ -7,8 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR/bin})
 
 set(PROJECT_DIR ${CMAKE_SOURCE_DIR}/${PROJECT_NAME})
-set(PROJECT_INCLUDE_DIR ${PROJECT_DIR}/src)
-set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 set(VENDOR_DIR ${PROJECT_DIR}/vendor)
 
 # GLFW
@@ -36,9 +34,7 @@ find_package(OpenGL REQUIRED)
 # Project Sources
 file(GLOB_RECURSE source_files
     "${PROJECT_DIR}/src/*.cpp"
-    "${PROJECT_DIR}/include/*.hpp"
-	
-	"${IMGUI_DIR}/*.h"
+    "${PROJECT_DIR}/src/include/*.hpp"
 )
 
 set(SOURCES ${source_files})
