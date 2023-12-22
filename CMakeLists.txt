@@ -28,6 +28,10 @@ add_subdirectory(${IMGUI_DIR})
 set(GLAD_DIR ${VENDOR_DIR}/glad)
 add_subdirectory(${GLAD_DIR})
 
+# STB
+set(STB_DIR ${VENDOR_DIR}/stb)
+add_subdirectory(${STB_DIR})
+
 # OpenGL
 find_package(OpenGL REQUIRED)
 
@@ -57,6 +61,7 @@ target_link_libraries(${PROJECT_NAME} glfw)
 target_link_libraries(${PROJECT_NAME} glad)
 target_link_libraries(${PROJECT_NAME} glm)
 target_link_libraries(${PROJECT_NAME} imgui)
+target_link_libraries(${PROJECT_NAME} stb)
 target_link_libraries(${PROJECT_NAME} OpenGL::GL)
 
 # Headers
@@ -67,6 +72,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC "${IMGUI_DIR}")
 target_include_directories(${PROJECT_NAME} PUBLIC "${GLM_DIR}")
 target_include_directories(${PROJECT_NAME} PUBLIC "${GLFW_DIR}/include")
 target_include_directories(${PROJECT_NAME} PUBLIC "${GLAD_DIR}/include")
+target_include_directories(${PROJECT_NAME} PUBLIC "${STB_DIR}/include")
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
