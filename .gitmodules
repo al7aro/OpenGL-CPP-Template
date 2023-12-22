@@ -11,7 +11,3 @@
 [submodule "ProjectName/vendor/glad"]
 	path = ProjectName/vendor/glad
 	url = https://github.com/dVaGaymer/glad.git
-[submodule "ProjectName/vendor/stb"]
-	path = ProjectName/vendor/stb
-	url = https://github.com/dVaGaymer/stb.git
-	branch = stb_image
