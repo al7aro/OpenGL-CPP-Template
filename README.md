@@ -1,5 +1,20 @@
 # OpenGL-Template
 
-# TODO
+# HOW TO USE
 
-- Create folder to store shaders inside build/
+- Create a repo from this template
+- Clone the repo on your machine
+```sh
+git clone [repo-url]
+```
+- Init the submodules
+```sh
+git submodule init
+git submodule update
+```
+- Build the project using cmake
+```sh
+mkdir build
+cd build
+cmake ..
+```
