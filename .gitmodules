@@ -12,3 +12,7 @@
 	path = ProjectName/vendor/stb
 	url = https://github.com/al7aro/stb.git
 	branch = stb_image
+[submodule "imgui"]
+	path = imgui
+	url = https://github.com/al7aro/imgui.git
+	branch = docking
